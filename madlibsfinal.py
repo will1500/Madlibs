@@ -1,4 +1,4 @@
-
+    
 sample1 = '''A ___1___ is created with the def keyword. You specify the inputs a ___1___ takes by
 adding ___2___ separated by commas between the parentheses. ___1___s by default return ___3___ if you
 don't specify the value to return. ___2___ can be standard data types such as string, number, dictionary,
@@ -21,6 +21,11 @@ answers3 = ["dictionary","unicode","interpreter","interpreted"]
 difficulties = ['easy','medium','hard']
 selected_difficulty = raw_input('select easy, medium, or hard: ').lower()
 
+maxReplacement=3
+maxTries=0
+alreadytyped = []
+
+
 
 def game(test, answers):
 	"""
@@ -29,12 +34,6 @@ def game(test, answers):
 	the count variable is the same lenth as the answe key. 
 	"""
 	count = 0
-	maxReplacement=3
-	maxTries=0
-	alreadytyped = []
- 
-	allowedNumTries = input('Enter a number for allowed wrong guesses:')
-	print "You will be allowed" + str(allowedNumTries) + "tries"
 
 	while True:
 		print test
@@ -56,13 +55,10 @@ def game(test, answers):
 			break
 		if typed not in answers:
 			print 'wrong bozo'
-			allowedNumTries -= 1
-			print allowedNumTries
-		# if typed isnt in answer then wrong guesses decrease by 1
-		if allowedNumTries == maxTries:
-			print 'Out of guesses SUCKA'
-			break
-		# when wrongguesses reach 0 game is over
+
+			
+
+		
 
 
 
@@ -73,4 +69,3 @@ if selected_difficulty == difficulties[1]:
 	game(sample2, answers2)
 if selected_difficulty == difficulties[2]:
 	game(sample3, answers3)
-
