@@ -51,6 +51,7 @@ def game(test, answers):
  
 			print "correct!"
 		if count == len(answers):
+			print test
 			print 'winner'
 			break
 		if typed not in answers:
